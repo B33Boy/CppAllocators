@@ -1,16 +1,16 @@
-#include "bump.hpp"
-#include <vector>
+#include "linear.hpp"
 
+#include <vector>
 
 int main()
 {
-    std::vector<int, BumpAllocator<int>> v;
+    std::vector<int, LinearAllocator<int>> v;
 
     v.push_back(10);
     v.push_back(20);
     v.push_back(30);
 
-    for (int x : v) 
+    for ( int x : v )
     {
         std::cout << x << " ";
     }
