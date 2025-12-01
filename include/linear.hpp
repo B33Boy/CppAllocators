@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cstdlib> // size_t
 #include <iostream>
 
@@ -8,13 +10,14 @@ public:
 
     constexpr LinearAllocator(size_t arena_size = 1024) noexcept : capacity_(arena_size), offset_(0)
     {
-        arena_ = static_cast<T*>(malloc(arena_size * sizeof(T)));
+        arena_ = static_cast<T*>(::operator new(arena_size * sizeof(T)));
+
         std::cout << "Arena Allocated with " << arena_size * sizeof(T) << " bytes\n";
     }
 
     ~LinearAllocator()
     {
-        free(arena_);
+        ::operator delete(arena_);
     }
 
     /**
