@@ -14,5 +14,5 @@ cmake --build build
 
 # Running examples
 ```bash
-./build/examples/bump_example
+./build/examples/linear_example
 ```
