@@ -4,7 +4,9 @@
 
 int main()
 {
-    std::vector<int, LinearAllocator<int>> v;
+    LinearArena arena(1024);
+
+    std::vector<int, LinearAllocator<int>> v(arena);
 
     v.push_back(10);
     v.push_back(20);
