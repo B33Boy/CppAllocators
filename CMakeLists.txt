@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
-project(crappy_allocators VERSION 0.1 LANGUAGES CXX)
+project(allocator_benchmarks VERSION 0.1 LANGUAGES CXX)
 
-add_compile_options(-Wall -Wextra -Wpedantic)
+add_compile_options(-Wall -Wextra)
 
 # ============ Allocators Lib ============
 add_library(allocators_lib INTERFACE)
