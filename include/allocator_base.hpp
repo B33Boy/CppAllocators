@@ -6,7 +6,7 @@
 template <typename Derived> class AllocatorBase
 {
 public:
-    void* allocate(size_t bytes, size_t align = alignof(std::max_align_t))
+    [[nodiscard]] void* allocate(size_t bytes, size_t align = alignof(std::max_align_t))
     {
         return derived().allocate_impl(bytes, align);
     }
