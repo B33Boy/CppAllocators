@@ -12,9 +12,9 @@ public:
         return ::operator new(bytes, std::align_val_t(align));
     }
 
-    void deallocate_impl(void* ptr, [[maybe_unused]] size_t bytes)
+    void deallocate_impl(void* ptr, [[maybe_unused]] size_t bytes, size_t align)
     {
-        ::operator delete(ptr);
+        ::operator delete(ptr, std::align_val_t(align));
     }
 
     void reset_impl()

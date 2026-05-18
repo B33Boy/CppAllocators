@@ -11,9 +11,9 @@ public:
         return derived().allocate_impl(bytes, align);
     }
 
-    void deallocate(void* ptr, size_t bytes)
+    void deallocate(void* ptr, size_t bytes, size_t align = alignof(std::max_align_t))
     {
-        derived().deallocate_impl(ptr, bytes);
+        derived().deallocate_impl(ptr, bytes, align);
     }
 
     void reset()
