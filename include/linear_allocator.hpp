@@ -37,5 +37,5 @@ public:
 private:
     alignas(std::max_align_t) std::byte buffer[N];
     size_t remain;
-    void* ptr;
+    std::byte* ptr;
 };
