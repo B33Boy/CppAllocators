@@ -14,13 +14,12 @@ public:
     void* allocate_impl(size_t bytes, size_t align) noexcept
     {
         void* pos = ptr;
-        size_t remaining_copy = remain;
 
-        if ( std::align(align, bytes, pos, remaining_copy) == nullptr )
+        if ( std::align(align, bytes, pos, remain) == nullptr )
             return nullptr;
 
         ptr = static_cast<std::byte*>(pos) + bytes;
-        remain = remaining_copy - bytes;
+        remain -= bytes;
         return pos;
     }
 
