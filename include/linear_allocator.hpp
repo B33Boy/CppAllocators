@@ -26,6 +26,7 @@ public:
     void deallocate_impl([[maybe_unused]] void* ptr, [[maybe_unused]] size_t bytes,
                          [[maybe_unused]] size_t align) noexcept
     {
+        // no-op
     }
 
     void reset_impl() noexcept

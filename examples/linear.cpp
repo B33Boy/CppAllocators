@@ -1,7 +1,6 @@
 #include "linear_allocator.hpp"
 
 #include <iostream>
-#include <vector>
 
 int main()
 {
@@ -14,9 +13,6 @@ int main()
     *d1 = 7.0;
 
     std::cout << "i1: " << *i1 << ", d1: " << *d1 << "\n";
-
-    l.deallocate(i1);
-    l.deallocate(d1);
 
     return 0;
 }
