@@ -11,3 +11,10 @@ target_link_libraries(bench_large_allocs
     allocators_lib
     benchmark::benchmark
 )
+
+add_executable(bench_stack_allocs bench_stack_allocs.cpp)
+target_link_libraries(bench_stack_allocs
+    PRIVATE
+    allocators_lib
+    benchmark::benchmark
+)
