@@ -15,7 +15,7 @@ static void BM_SystemAllocator_SingleLarge(benchmark::State& state)
     }
 }
 
-static void BM_LinearArena_SingleLarge(benchmark::State& state)
+static void BM_LinearAllocator_SingleLarge(benchmark::State& state)
 {
     size_t size = state.range(0);
     LinearAllocator<10 * 1024 * 1024> a; // capacity is equal to the largest arg (due to compile time constraint)
@@ -31,5 +31,5 @@ static void BM_LinearArena_SingleLarge(benchmark::State& state)
 }
 
 BENCHMARK(BM_SystemAllocator_SingleLarge)->Arg(1024)->Arg(1024 * 1024)->Arg(10 * 1024 * 1024);
-BENCHMARK(BM_LinearArena_SingleLarge)->Arg(1024)->Arg(1024 * 1024)->Arg(10 * 1024 * 1024);
+BENCHMARK(BM_LinearAllocator_SingleLarge)->Arg(1024)->Arg(1024 * 1024)->Arg(10 * 1024 * 1024);
 BENCHMARK_MAIN();

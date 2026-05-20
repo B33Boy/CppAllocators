@@ -14,7 +14,7 @@ static void BM_SystemAllocator_SmallAllocs(benchmark::State& state)
     }
 }
 
-static void BM_LinearArena_SmallAllocs(benchmark::State& state)
+static void BM_LinearAllocator_SmallAllocs(benchmark::State& state)
 {
     LinearAllocator<1024 * 1024> a; // 1MB backing buffer
     for ( auto _ : state )
@@ -27,6 +27,6 @@ static void BM_LinearArena_SmallAllocs(benchmark::State& state)
 }
 
 BENCHMARK(BM_SystemAllocator_SmallAllocs);
-BENCHMARK(BM_LinearArena_SmallAllocs);
+BENCHMARK(BM_LinearAllocator_SmallAllocs);
 
 BENCHMARK_MAIN();

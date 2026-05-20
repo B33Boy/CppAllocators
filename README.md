@@ -1,18 +1,31 @@
-# Custom C++ Allocators
+# Benchmarking Various C++ Allocators
 
-# Features
-- Compatible with stl containers
-- Clean minimal API
-- Bump Allocator
+## Allocators Implemented
+- System Allocator 
+- Linear Allocator
+- Stack Allocator
 
-# Build Instructions
+## Build Instructions
 ```bash
 mkdir build
-cmake -S . -B build
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 
-# Running examples
+## Running Examples
 ```bash
-./build/examples/linear_example
+./build/examples/<EXAMPLE_NAME>
 ```
+
+## Running Tests
+
+## Benchmarks
+### Running Benchmarks
+```bash
+./build/benchmarks/<BENCHMARK_NAME> --benchmark_format=json --benchmark_out=results.json
+```
+
+## Results
+
+### Small allocations 
+![small allocations](notebooks/small_allocs.png)
